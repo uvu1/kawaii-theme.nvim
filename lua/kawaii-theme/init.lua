@@ -120,8 +120,8 @@ function M.load()
   -- Syntax
   hl("Comment", { fg = p.comment })
   hl("String", { fg = p.pink3 })
-  hl("Number", { fg = p.pink3 })
-  hl("Boolean", { fg = p.pink3 })
+  hl("Number", { fg = p.pink })
+  hl("Boolean", { fg = p.pink2, bold = true })
   hl("Constant", { fg = p.pink3 })
   hl("Function", { fg = p.yellow })
   hl("Keyword", { fg = p.pink4 })
@@ -138,8 +138,8 @@ function M.load()
   -- Treesitter
   hl("@comment", { fg = p.comment })
   hl("@string", { fg = p.pink3 })
-  hl("@number", { fg = p.pink3 })
-  hl("@boolean", { fg = p.pink3 })
+  hl("@number", { fg = p.pink })
+  hl("@boolean", { fg = p.pink2, bold = true })
   hl("@constant", { fg = p.pink3 })
   hl("@constant.builtin", { fg = p.pink3 })
   hl("@variable", { fg = p.fg })
@@ -259,6 +259,113 @@ function M.load()
   hl("BlinkCmpLabelMatch", { fg = p.yellow, bold = true })
   hl("BlinkCmpDoc", { fg = p.fg, bg = bg_float })
   hl("BlinkCmpDocBorder", { fg = p.pink2, bg = bg_float })
+  -- lazy.nvim
+  hl("LazyNormal", { fg = p.fg, bg = bg_float })
+  hl("LazyButton", { fg = p.fg, bg = p.selection })
+  hl("LazyButtonActive", { fg = p.bg, bg = p.pink2, bold = true })
+  hl("LazyH1", { fg = p.bg, bg = p.pink2, bold = true })
+  hl("LazyH2", { fg = p.yellow, bold = true })
+
+  hl("LazyComment", { fg = p.comment })
+  hl("LazyDimmed", { fg = p.comment })
+  hl("LazyBold", { fg = p.fg, bold = true })
+  hl("LazyItalic", { fg = p.fg, italic = true })
+
+  hl("LazyDir", { fg = p.pink3 })
+  hl("LazyUrl", { fg = p.pink3, underline = true })
+  hl("LazySpecial", { fg = p.purple })
+  hl("LazyValue", { fg = p.pink3 })
+  hl("LazyProp", { fg = p.comment })
+  hl("LazyLocal", { fg = p.orange })
+  hl("LazyCommit", { fg = p.purple })
+  hl("LazyCommitIssue", { fg = p.orange })
+  hl("LazyCommitType", { fg = p.pink4 })
+  hl("LazyCommitScope", { fg = p.purple, italic = true })
+
+  hl("LazyProgressDone", { fg = p.pink2 })
+  hl("LazyProgressTodo", { fg = p.comment })
+
+  hl("LazyReasonCmd", { fg = p.pink4 })
+  hl("LazyReasonEvent", { fg = p.orange })
+  hl("LazyReasonFt", { fg = p.pink3 })
+  hl("LazyReasonImport", { fg = p.fg })
+  hl("LazyReasonKeys", { fg = p.yellow })
+  hl("LazyReasonPlugin", { fg = p.purple })
+  hl("LazyReasonRequire", { fg = p.yellow })
+  hl("LazyReasonRuntime", { fg = p.purple })
+  hl("LazyReasonSource", { fg = p.pink3 })
+  hl("LazyReasonStart", { fg = p.pink2 })
+
+  hl("LazyError", { fg = p.red })
+  hl("LazyWarning", { fg = p.yellow })
+  hl("LazyInfo", { fg = p.purple })
+  hl("LazyTaskOutput", { fg = p.comment })
+
+
+  -- mason.nvim / :Mason
+  hl("MasonNormal", { fg = p.fg, bg = bg_float })
+
+  hl("MasonHeader", { fg = p.bg, bg = p.pink2, bold = true })
+  hl("MasonHeaderSecondary", { fg = p.bg, bg = p.purple, bold = true })
+
+  hl("MasonHighlight", { fg = p.pink3 })
+  hl("MasonHighlightSecondary", { fg = p.purple })
+
+  hl("MasonHighlightBlock", { fg = p.bg, bg = p.pink2 })
+  hl("MasonHighlightBlockBold", { fg = p.bg, bg = p.pink2, bold = true })
+  hl("MasonHighlightBlockSecondary", { fg = p.bg, bg = p.purple })
+  hl("MasonHighlightBlockBoldSecondary", { fg = p.bg, bg = p.purple, bold = true })
+
+  hl("MasonMuted", { fg = p.comment })
+  hl("MasonMutedBlock", { fg = p.bg_dark, bg = p.muted})
+  hl("MasonMutedBlockBold", { fg = p.bg, bg = p.comment, bold = true })
+
+
+  -- gitsigns.nvim
+  hl("GitSignsAdd", { fg = p.green })
+  hl("GitSignsChange", { fg = p.yellow })
+  hl("GitSignsDelete", { fg = p.red })
+
+  hl("GitSignsTopdelete", { fg = p.red })
+  hl("GitSignsChangedelete", { fg = p.orange })
+  hl("GitSignsUntracked", { fg = p.green })
+
+  hl("GitSignsAddNr", { fg = p.green })
+  hl("GitSignsChangeNr", { fg = p.yellow })
+  hl("GitSignsDeleteNr", { fg = p.red })
+
+  hl("GitSignsAddLn", { bg = "#2f453d" })
+  hl("GitSignsChangeLn", { bg = "#4a3f42" })
+  hl("GitSignsDeleteLn", { bg = "#4a3040" })
+
+  hl("GitSignsAddInline", { bg = "#2f453d" })
+  hl("GitSignsChangeInline", { bg = "#4a3f42" })
+  hl("GitSignsDeleteInline", { bg = "#4a3040" })
+
+  hl("GitSignsCurrentLineBlame", { fg = p.comment, italic = true })
+
+
+  -- which-key.nvim
+  hl("WhichKeyNormal", { fg = p.fg, bg = bg_float })
+  hl("WhichKeyBorder", { fg = p.pink2, bg = bg_float })
+  hl("WhichKeyTitle", { fg = p.bg, bg = p.pink2, bold = true })
+
+  hl("WhichKey", { fg = p.pink3, bold = true })
+  hl("WhichKeyGroup", { fg = p.pink4, bold = true })
+  hl("WhichKeyDesc", { fg = p.fg })
+  hl("WhichKeySeparator", { fg = p.comment })
+  hl("WhichKeyValue", { fg = p.comment })
+
+  hl("WhichKeyIcon", { fg = p.pink3 })
+  hl("WhichKeyIconAzure", { fg = p.purple })
+  hl("WhichKeyIconBlue", { fg = p.purple })
+  hl("WhichKeyIconCyan", { fg = p.pink3 })
+  hl("WhichKeyIconGreen", { fg = p.green })
+  hl("WhichKeyIconGrey", { fg = p.comment })
+  hl("WhichKeyIconOrange", { fg = p.orange })
+  hl("WhichKeyIconPurple", { fg = p.purple })
+  hl("WhichKeyIconRed", { fg = p.red })
+  hl("WhichKeyIconYellow", { fg = p.yellow })
 end
 
 return M
