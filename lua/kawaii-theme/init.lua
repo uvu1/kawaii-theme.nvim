@@ -1,4 +1,5 @@
 local M = {}
+local p = require("kawaii-theme.palette")
 
 M.config = {
   transparent = false,
@@ -6,6 +7,7 @@ M.config = {
 
 function M.setup(opts)
   M.config = vim.tbl_deep_extend("force", M.config, opts or {})
+  vim.g.kawaiitheme_transparent = M.config.transparent
 end
 
 local function hl(group, opts)
@@ -26,33 +28,6 @@ function M.load()
 
   vim.o.termguicolors = true
   vim.g.colors_name = "kawaii-theme"
-
-  local p = {
-    none = "NONE",
-
-    bg = "#353042",
-    bg_dark = "#2C2638",
-    bg_float = "#3f3850",
-    fg = "#FFF0F5",
-    fg_dark = "#fde3e8",
-    muted = "#9498a1",
-    comment = "#857282",
-
-    pink = "#ff5c8d",
-    pink2 = "#ea7599",
-    pink3 = "#FFA7C4",
-    pink4 = "#ff709b",
-
-    yellow = "#FFE175",
-    purple = "#CE85F8",
-    green = "#37e884",
-    red = "#ff62a5",
-    orange = "#ec9a5e",
-
-    selection = "#50364c",
-    selection_strong = "#723854",
-    border = "#484454",
-  }
 
   local bg = M.config.transparent and p.none or p.bg
   local bg_float = M.config.transparent and p.none or p.bg_float
@@ -366,6 +341,9 @@ function M.load()
   hl("WhichKeyIconPurple", { fg = p.purple })
   hl("WhichKeyIconRed", { fg = p.red })
   hl("WhichKeyIconYellow", { fg = p.yellow })
+
+
+
 end
 
 return M
